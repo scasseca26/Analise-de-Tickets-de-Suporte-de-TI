@@ -305,7 +305,7 @@ Com base na análise, é possível concluir que:
 ## Estrutura do Projecto
 
 ```
-analise-tickets-suporte-ti
+analise-de-tickets-de-suporte-ti
 │
 ├── dados
 │   └── aa_dataset-tickets-multi-lang-5-2-50-version.csv    # Base de dados original
