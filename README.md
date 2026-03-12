@@ -284,10 +284,12 @@ A análise das etiquetas técnicas permite identificar os temas e componentes ma
 <img width="1313" height="740" alt="Visão Geral" src="https://github.com/user-attachments/assets/b3025845-364b-4164-af8b-c95e5f87ac54" />
 <em>Figura 1: Visão Geral</em>
 
-<img width="1314" height="742" alt="Visão Tags" src="https://github.com/user-attachments/assets/9ada51cc-3388-426a-a075-51168f163aff" />
-<em>Figura 2: Visão Performance</em>
 
 <img width="1318" height="737" alt="Visão1 Suporte" src="https://github.com/user-attachments/assets/4308bddd-4094-4c94-ae7a-593b340fd9a4" />
+<em>Figura 2: Visão Performance</em>
+
+
+<img width="1314" height="742" alt="Visão Tags" src="https://github.com/user-attachments/assets/9ada51cc-3388-426a-a075-51168f163aff" />
 <em>Figura 3: Visão Tags</em>
 
 Com base na análise, é possível concluir que:
