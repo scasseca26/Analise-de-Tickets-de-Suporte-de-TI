@@ -1,5 +1,5 @@
 # Analise-de-Tickets-de-Suporte-de-TI
-Projecto de análise de dados que explora padrões, tempos de resolução e tendências em tickets de TI, usando Excel e Power BI, para gerar insights e melhorar a eficiência do suporte.
+Projecto de análise de dados que explora padrões, tempos de resolução e tendências em tickets de TI, usando Power BI, para gerar insights e melhorar a eficiência do suporte.
 
 ![Power BI](https://img.shields.io/badge/Ferramenta-Power%20BI-F2C811?style=flat&logo=powerbi&logoColor=black)
 ![Status](https://img.shields.io/badge/Status-Concluído-brightgreen)
