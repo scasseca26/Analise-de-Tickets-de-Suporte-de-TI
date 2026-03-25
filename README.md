@@ -121,14 +121,14 @@ Todas as medidas foram centralizadas numa tabela dedicada `_Medidas` para facili
 
 **Total Tickets**
 ```dax
-Total Tickets = DISTINCTCOUNT(dataset_tickets_traduzido_pt[ID_Ticket])
+Total Tickets = DISTINCTCOUNT(Fato_Tickets[ID_Ticket])
 ```
 
 **Tickets Alta Prioridade**
 ```dax
 Tickets Alta Prioridade = CALCULATE(
     [Total Tickets],
-    'dataset_tickets_traduzido_pt'[priority] = "Alta"
+    'Dim_Prioridade'[priority] = "Alta"
 )
 ```
 
@@ -136,11 +136,11 @@ Tickets Alta Prioridade = CALCULATE(
 ```dax
 AVG Resolution time =
 AVERAGEX(
-    VALUES(dataset_tickets_traduzido_pt[ID_Ticket]),
+    VALUES(Fato_Tickets[ID_Ticket]),
     CALCULATE(
         DATEDIFF(
-            MIN(dataset_tickets_traduzido_pt[opening_date]),
-            MIN(dataset_tickets_traduzido_pt[closing_date]),
+            MIN(Fato_Tickets[opening_date]),
+            MIN(Fato_Tickets[closing_date]),
             MINUTE
         ) / 60
     )
@@ -159,8 +159,8 @@ VAR HorasMeta = 36
 VAR TicketsNoPrazo =
     COUNTROWS(
         FILTER(
-            VALUES(dataset_tickets_traduzido_pt[ID_Ticket]),
-            CALCULATE(DATEDIFF(MIN(dataset_tickets_traduzido_pt[opening_date]), MIN(dataset_tickets_traduzido_pt[closing_date]), HOUR)) <= HorasMeta
+            VALUES(Fato_Tickets[ID_Ticket]),
+            CALCULATE(DATEDIFF(MIN(Fato_Tickets[opening_date]), MIN(Fato_Tickets[closing_date]), HOUR)) <= HorasMeta
         )
     )
 RETURN
@@ -197,7 +197,7 @@ MAXX(
 
 **Total de Tags**
 ```dax
-Total de Tags = DISTINCTCOUNT(dataset_tickets_traduzido_pt[Tags])
+Total de Tags = DISTINCTCOUNT(Dim_Tags[Tags])
 ```
 
 ---
