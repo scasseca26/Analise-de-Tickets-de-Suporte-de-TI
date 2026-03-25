@@ -213,19 +213,29 @@ Total de Tags = DISTINCTCOUNT(dataset_tickets_traduzido_pt[Tags])
 > - Quais categorias técnicas concentram mais falhas críticas?
 > - Em que dias e meses a equipa está mais sobrecarregada?
 
-### Passo 3 — Definição da Coluna Facto
-A coluna facto principal é **ID_Ticket**, contabilizada via `DISTINCTCOUNT`, pois é a unidade base de toda a análise operacional. O **AVG Resolution Time** é a métrica de desempenho central, medindo a eficiência da equipa na resolução dos incidentes.
-
+### Passo 3 — Definição da Tabela Facto
+A tabela facto central é a **Fato_Tickets**, que regista cada ticket de suporte como uma transacção individual. As suas métricas principais são o **ID_Ticket** — contabilizado via `DISTINCTCOUNT` como unidade base de toda a análise — e as datas de `opening_date` e `closing_date`, que permitem calcular o **AVG Resolution Time**, a métrica de desempenho central do projecto.
+ 
+| Coluna | Papel na Análise |
+|--------|-----------------|
+| `ID_Ticket` | Unidade de contagem base (`DISTINCTCOUNT`) |
+| `opening_date` | Início do cálculo de MTTR e SLA |
+| `closing_date` | Fim do cálculo de MTTR e SLA |
+| `reference_date` | Ligação com a tabela Calendário |
+| `id_category` | Chave estrangeira → `Dim_Categoria` |
+| `id_type` | Chave estrangeira → `Dim_Tipo` |
+| `id_tags` | Chave estrangeira → `Dim_Tags` |
+| `id_priority` | Chave estrangeira → `Dim_Prioridade` |
+ 
 ### Passo 4 — Identificação das Dimensões
-
-| Dimensão | Coluna |
-|----------|--------|
-| Prioridade | `priority` |
-| Tipo de Incidente | `type` |
-| Categoria | `category` |
-| Etiquetas Técnicas | `Tags` |
-| Tempo | `opening_date`, `closing_date`, `reference_date` |
-| Calendário | `Ano`, `Mês Nome`, `Weekday` |
+ 
+| Tabela de Dimensão | Coluna de Análise | Descrição |
+|-------------------|------------------|-----------|
+| `Dim_Prioridade` | `priority` | Nível de prioridade do ticket |
+| `Dim_Tipo` | `type` | Tipo de incidente registado |
+| `Dim_Categoria` | `category` | Categoria técnica do ticket |
+| `Dim_Tags` | `Tags` | Etiquetas técnicas associadas |
+| `Calendário` | `Ano`, `Mês Nome`, `Weekday` | Análise temporal dos tickets |
 
 ### Passo 5 — Hipóteses Analíticas
 
