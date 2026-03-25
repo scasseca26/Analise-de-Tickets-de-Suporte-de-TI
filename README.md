@@ -214,6 +214,7 @@ Total de Tags = DISTINCTCOUNT(Dim_Tags[Tags])
 > - Em que dias e meses a equipa está mais sobrecarregada?
 
 ### Passo 3 — Definição da Tabela Facto
+A modelagem foi realizada seguindo o **Esquema Star (Star Schema)**, separando os dados numa tabela facto central rodeada por tabelas de dimensão, garantindo melhor desempenho nas consultas e maior clareza na estrutura do modelo.
 A tabela facto central é a **Fato_Tickets**, que regista cada ticket de suporte como uma transacção individual. As suas métricas principais são o **ID_Ticket** — contabilizado via `DISTINCTCOUNT` como unidade base de toda a análise — e as datas de `opening_date` e `closing_date`, que permitem calcular o **AVG Resolution Time**, a métrica de desempenho central do projecto.
  
 | Coluna | Papel na Análise |
